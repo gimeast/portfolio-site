@@ -5,7 +5,7 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
-import { navRoutes } from "../router/routes";
+import navRoutes from "../router/routes.js";
 import logo from "../assets/logo.svg";
 
 export default function Header() {

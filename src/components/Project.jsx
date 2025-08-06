@@ -2,9 +2,12 @@ import React from "react";
 
 const Project = () => {
     return (
-        <section>
-            <h3>프로젝트</h3>
-        </section>
+        <>
+            <h2>프로젝트</h2>
+            <section>
+                <h3>project...</h3>
+            </section>
+        </>
     );
 };
 

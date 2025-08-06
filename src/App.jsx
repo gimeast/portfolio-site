@@ -1,11 +1,10 @@
-import Header from "./components/Header.jsx";
-import Main from "./components/Main.jsx";
+import { RouterProvider } from "react-router-dom";
+import router from "./router/Routes.jsx";
 
 function App() {
     return (
         <>
-            <Header />
-            <Main />
+            <RouterProvider router={router} />
         </>
     );
 }
