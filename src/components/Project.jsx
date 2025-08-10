@@ -6,7 +6,7 @@ const Project = () => {
         <>
             <h2>프로젝트</h2>
             <section>
-                <h3>project...</h3>
+                <h3>WEB/MOBILE 프로젝트</h3>
                 <Link to="/project/web">WEB</Link>
                 <Link to="/project/mobile">MOB</Link>
                 <Outlet />

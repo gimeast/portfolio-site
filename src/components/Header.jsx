@@ -5,12 +5,14 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
-import navRoutes from "../router/routes.js";
 import logo from "../assets/logo.svg";
 
 export default function Header() {
-    const homeRoute = navRoutes.find(({ path }) => path === "/");
-    const nav = navRoutes.filter(({ path }) => path !== "/");
+    const nav = [
+        { path: "/project", label: "프로젝트" },
+        { path: "/about", label: "소개" },
+        { path: "/contact", label: "연락처" },
+    ];
 
     return (
         <header>
@@ -20,10 +22,7 @@ export default function Header() {
                         <div className="flex flex-1 items-center justify-start sm:items-stretch sm:justify-between">
                             <div className="flex items-center">
                                 {
-                                    <NavLink
-                                        key={homeRoute.path}
-                                        to={homeRoute.path}
-                                    >
+                                    <NavLink key="/" to="/">
                                         <img
                                             alt="gimeast의 포트폴리오 사이트 로고"
                                             src={logo}
