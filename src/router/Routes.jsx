@@ -1,11 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
-import Layout from "../components/Layout.jsx";
-import Home from "../components/Home.jsx";
-import Project from "../components/Project.jsx";
-import WebProject from "../components/WebProject.jsx";
-import MobileProject from "../components/MobileProject.jsx";
-import About from "../components/About.jsx";
-import Contact from "../components/Contact.jsx";
+import Layout from "../pages/Layout.jsx";
+import Home from "../pages/Home.jsx";
+import Project from "../pages/Project.jsx";
+import Contact from "../pages/Contact.jsx";
+import About from "../pages/About.jsx";
 
 const router = createBrowserRouter([
     {
@@ -13,24 +11,20 @@ const router = createBrowserRouter([
         element: <Layout />,
         children: [
             {
-                index: true,
-                element: <Home />,
-            },
-            {
-                path: "/project",
-                element: <Project />,
-                children: [
-                    { path: "web", element: <WebProject /> },
-                    { path: "mobile", element: <MobileProject /> },
-                ],
-            },
-            {
                 path: "/about",
                 element: <About />,
             },
             {
                 path: "/contact",
                 element: <Contact />,
+            },
+            {
+                index: true,
+                element: <Home />,
+            },
+            {
+                path: "/project",
+                element: <Project />,
             },
         ],
     },
