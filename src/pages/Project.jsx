@@ -73,6 +73,7 @@ const Project = () => {
                                     alt={project.alt}
                                 />
                             </a>
+
                             <div className="absolute bottom-[-50px] left-5 flex flex-col justify-center pl-5 w-70 bg-[rgba(0,0,0,0.8)] text-white p-2">
                                 <h4 className="text-xl font-bold">
                                     {project.name}
