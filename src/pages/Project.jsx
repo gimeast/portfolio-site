@@ -50,7 +50,7 @@ const Project = () => {
             <section className="flex flex-col items-center mt-20">
                 <h3 className="sr-only">프로젝트 목록</h3>
 
-                <ul className="flex justify-center items-center bg-gray-100 rounded-2xl w-74 h-14">
+                <ul className="flex justify-center items-center bg-gray-100 rounded-2xl w-full max-w-sm px-4 h-14">
                     {filterTypes.map((type, index) => (
                         <li className="" key={index}>
                             <button
@@ -62,12 +62,12 @@ const Project = () => {
                         </li>
                     ))}
                 </ul>
-                <ul className="grid grid-cols-2 gap-15 mt-20">
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-15 mt-20">
                     {projects.map((project) => (
-                        <li key={project.id} className={"relative"}>
+                        <li className="relative mt-10" key={project.id}>
                             <a href={project.url} target="_blank">
                                 <img
-                                    className="max-w-150 shadow-2xl rounded-2xl"
+                                    className="w-full max-w-150 mx-auto shadow-2xl rounded-2xl"
                                     src={project.img}
                                     alt={project.alt}
                                 />
@@ -80,7 +80,10 @@ const Project = () => {
 
                             <div className="flex gap-1">
                                 {project.types.map((type) => (
-                                    <span className="bg-gray-800 text-white px-2 py-1 rounded-2xl">
+                                    <span
+                                        key={type}
+                                        className="bg-gray-800 text-white px-2 py-1 rounded-2xl"
+                                    >
                                         {type}
                                     </span>
                                 ))}

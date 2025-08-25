@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 
 const Main = () => {
     return (
-        <main className="flex flex-col items-center mx-auto max-w-[1920px] min-h-dvh mt-48">
+        <main className="flex flex-col items-center mx-auto max-w-[1920px] min-h-dvh mt-48 mb-48 px-4">
             <Outlet />
         </main>
     );

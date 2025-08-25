@@ -11,9 +11,9 @@ function Header() {
     }
 
     return (
-        <header className="flex justify-center items-center w-dvw fixed top-0 z-10">
+        <header className="flex justify-center items-center w-full relative md:fixed top-0 z-20">
             <Modal isOpen={isOpen} handleMenuToggle={handleMenuToggle} />
-            <div className="w-[100%] flex justify-between p-5 max-w-[1920px]">
+            <div className="w-full flex justify-between p-5 max-w-[1920px] px-5 sm:px-10">
                 <h1 className="text-3xl">
                     <Link to="/">
                         <span className="inline-block animate-[bounce_0.7s_ease-in_3_forwards]">

@@ -2,7 +2,11 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 const Modal = ({ isOpen, handleMenuToggle }) => {
-    const [linkList, setLinkList] = useState(["project", "about", "contact"]);
+    const [linkList, setLinkList] = useState([
+        { url: "/project", name: "Project" },
+        { url: "/about", name: "About" },
+        { url: "/contact", name: "Contact" },
+    ]);
 
     return (
         <nav
@@ -14,10 +18,10 @@ const Modal = ({ isOpen, handleMenuToggle }) => {
                     }`}
         >
             <ul className="flex flex-col gap-10 text-5xl text-white text-center italic">
-                {linkList.map((link) => (
-                    <li key={link}>
+                {linkList.map(({ name, url }) => (
+                    <li key={name}>
                         <NavLink
-                            to={`/${link}`}
+                            to={`${url}`}
                             onClick={handleMenuToggle}
                             className={({ isActive }) =>
                                 isActive
@@ -25,7 +29,7 @@ const Modal = ({ isOpen, handleMenuToggle }) => {
                                     : "transition-all duration-300 ease-in-out hover:shadow-[0_5px_0_0_white]"
                             }
                         >
-                            {link.charAt(0).toUpperCase() + link.slice(1)}
+                            {name}
                         </NavLink>
                     </li>
                 ))}
