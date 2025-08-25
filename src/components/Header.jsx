@@ -15,7 +15,12 @@ function Header() {
             <Modal isOpen={isOpen} handleMenuToggle={handleMenuToggle} />
             <div className="w-[100%] flex justify-between p-5 max-w-[1920px]">
                 <h1 className="text-3xl">
-                    <Link to="/">GIMEAST</Link>
+                    <Link to="/">
+                        <span className="inline-block animate-[bounce_0.7s_ease-in_3_forwards]">
+                            G
+                        </span>
+                        IMEAST
+                    </Link>
                 </h1>
 
                 {!isOpen ? (

@@ -25,7 +25,7 @@ const Project = () => {
     const [projects, setProjects] = useState([]);
     const [currentType, setCurrentType] = useState({});
 
-    const filterTypes = ["ALL", "DATA-VISUALIZATION", "WEB", "INTERACTIVE"];
+    const filterTypes = ["ALL", "WEB", "INTERACTIVE"];
 
     function handleFilter(type) {
         setCurrentType(type);
@@ -46,13 +46,15 @@ const Project = () => {
     return (
         <>
             <h2 className="text-7xl font-bold">Projects</h2>
-            <section className="mb-50">
+
+            <section className="flex flex-col items-center mt-20">
                 <h3 className="sr-only">프로젝트 목록</h3>
-                <ul className="flex gap-5">
+
+                <ul className="flex justify-center items-center bg-gray-100 rounded-2xl w-74 h-14">
                     {filterTypes.map((type, index) => (
-                        <li className="mt-15" key={index}>
+                        <li className="" key={index}>
                             <button
-                                className={`border border-gray-300 text-lg px-6 py-0.5 rounded-2xl cursor-pointer ${currentType === type ? "bg-zinc-900 text-white" : ""}`}
+                                className={`text-lg px-4 py-2 rounded-2xl cursor-pointer ${currentType === type ? "bg-white text-black" : ""}`}
                                 onClick={() => handleFilter(type)}
                             >
                                 {type}
@@ -60,12 +62,9 @@ const Project = () => {
                         </li>
                     ))}
                 </ul>
-                <ul className="flex flex-col gap-30 mt-30">
-                    {projects.map((project, index) => (
-                        <li
-                            key={project.id}
-                            className={`relative ${index % 2 === 0 ? "left-0" : "left-40"}`}
-                        >
+                <ul className="grid grid-cols-2 gap-15 mt-20">
+                    {projects.map((project) => (
+                        <li key={project.id} className={"relative"}>
                             <a href={project.url} target="_blank">
                                 <img
                                     className="max-w-150 shadow-2xl rounded-2xl"
@@ -74,18 +73,17 @@ const Project = () => {
                                 />
                             </a>
 
-                            <div className="absolute bottom-[-50px] left-5 flex flex-col justify-center pl-5 w-70 bg-[rgba(0,0,0,0.8)] text-white p-2">
-                                <h4 className="text-xl font-bold">
-                                    {project.name}
-                                </h4>
-                                <p className="flex gap-4 font-thin">
-                                    {project.types.map((type, index) => (
-                                        <span key={index}>#{type}</span>
-                                    ))}
-                                </p>
-                                <span className="text-sm font-thin text-gray-400">
-                                    {project.date}
-                                </span>
+                            <h4 className="text-2xl mt-5">{project.name}</h4>
+                            <time className="text-sm text-gray-600">
+                                {project.date}
+                            </time>
+
+                            <div className="flex gap-1">
+                                {project.types.map((type) => (
+                                    <span className="bg-gray-800 text-white px-2 py-1 rounded-2xl">
+                                        {type}
+                                    </span>
+                                ))}
                             </div>
                         </li>
                     ))}
